@@ -8,7 +8,7 @@
 <title>My first JSP</title>
 </head>
 <body>
-	<form action="HelloServlet">
+	<form action="PassFormInput">
 		<p>Your Input</p> 
 		<textarea name="userinput" rows="8" cols="35" style="overflow:auto; border:3px outset #000000;"></textarea>
 		<p>Your Name</p>
