@@ -56,10 +56,10 @@ public class Solution {
 		for (char direction: movements) {
 			// get the next move position
 			int x = 0, y = 0;
-			if (direction == 'W') x = -1;
-			if (direction == 'E') x = 1;
-			if (direction == 'N') y = -1;
-			if (direction == 'S') y = 1;
+			if (direction == 'W') y = -1;
+			if (direction == 'E') y = 1;
+			if (direction == 'N') x = -1;
+			if (direction == 'S') x = 1;
 			Pair nextPosition = new Pair(this.currentLocation.x + x, this.currentLocation.y + y);
 			
 			// process the move

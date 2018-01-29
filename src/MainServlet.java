@@ -21,11 +21,11 @@ public class MainServlet extends HttpServlet {
 		
 		// first input is boardDimension
 		String[] dimensionArray = lines[0].split(" ");
-		Pair boardDimension = new Pair(Integer.parseInt(dimensionArray[0]), Integer.parseInt(dimensionArray[1]));
+		Pair boardDimension = new Pair(Integer.parseInt(dimensionArray[0].trim()), Integer.parseInt(dimensionArray[1].trim()));
 		
 		// second input is initialPosition 
 		String[] initPositionArray = lines[1].split(" ");
-		Pair initialPosition = new Pair(Integer.parseInt(initPositionArray[0]), Integer.parseInt(initPositionArray[1]));
+		Pair initialPosition = new Pair(Integer.parseInt(initPositionArray[0].trim()), Integer.parseInt(initPositionArray[1].trim()));
 		 
 		// third input is movementString
 		String movementString = lines[2].trim().toUpperCase();
@@ -34,7 +34,7 @@ public class MainServlet extends HttpServlet {
 		List<Pair> walls = new ArrayList<Pair>();
 		for (int i = 3; i < lines.length; i++) {
 			String[] wallLocationArray = lines[i].split(" ");
-			Pair wallLocation = new Pair(Integer.parseInt(wallLocationArray[0]), Integer.parseInt(wallLocationArray[1]));
+			Pair wallLocation = new Pair(Integer.parseInt(wallLocationArray[0].trim()), Integer.parseInt(wallLocationArray[1].trim()));
 			walls.add(wallLocation);
 		}
 		
