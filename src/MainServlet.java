@@ -1,5 +1,7 @@
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,8 +17,29 @@ public class MainServlet extends HttpServlet {
 
 		String userinput = request.getParameter("userinput");
 		String username = request.getParameter("username");
+		String[] lines = userinput.split(System.getProperty("line.separator"));
 		
-		String useroutput = "1234";
+		// first input is boardDimension
+		String[] dimensionArray = lines[0].split(" ");
+		Pair boardDimension = new Pair(Integer.parseInt(dimensionArray[0]), Integer.parseInt(dimensionArray[1]));
+		
+		// second input is initialPosition 
+		String[] initPositionArray = lines[1].split(" ");
+		Pair initialPosition = new Pair(Integer.parseInt(initPositionArray[0]), Integer.parseInt(initPositionArray[1]));
+		 
+		// third input is movementString
+		String movementString = lines[2].trim().toUpperCase();
+		
+		// final input is list of walls as pairs
+		List<Pair> walls = new ArrayList<Pair>();
+		for (int i = 3; i < lines.length; i++) {
+			String[] wallLocationArray = lines[i].split(" ");
+			Pair wallLocation = new Pair(Integer.parseInt(wallLocationArray[0]), Integer.parseInt(wallLocationArray[1]));
+			walls.add(wallLocation);
+		}
+		
+		Solution ins = new Solution(boardDimension, initialPosition, movementString, walls);
+		
 		PrintWriter out = response.getWriter();
 		out.println("<html> \n" 
 				+ "<head> \n"
@@ -33,8 +56,12 @@ public class MainServlet extends HttpServlet {
 				+ "</p> \n"
 				+ "<h2>Output is</h2>"
 				+ "<p>"
-				+ useroutput
+				+ ins.getFinalLocation().x + " " + ins.getFinalLocation().y
+				+ "</p> \n" 
+				+ "<p>"
+				+ ins.getTotalCoinsCollected()
 				+ "</p> \n" 
 				+ "</body> \n" + "</html>");
 	}
+	
 }
