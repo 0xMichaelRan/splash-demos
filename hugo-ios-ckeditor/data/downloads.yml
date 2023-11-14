@@ -1,0 +1,27 @@
+enabled: true
+# this will show up on top of the section as a h1
+title: Download now
+downloads:
+  - distro: Flathub
+    logo:
+    button_title: Download on Flathub
+    button_link: "#"
+    button_color: purple
+    commands: |
+      flatpak --user install <package-name-here>
+  - distro: Fedora
+    logo:
+    commands: |
+      ls -l /
+      echo "Foo"
+  - distro: Debian (unstable)
+    icon: debian
+    commands: |
+      ls -l /
+      echo "Foo"
+  - distro: foobar
+    logo: /logo-boxed.svg
+    button_title: Foo that bar
+    button_link: "#"
+    button_outline: true
+    button_squared: true

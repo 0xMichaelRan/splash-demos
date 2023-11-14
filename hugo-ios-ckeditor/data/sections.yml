@@ -1,0 +1,11 @@
+# The type markdown expects .md files inside /content.
+- type: markdown
+  data: description
+
+# All other types expect .yml files inside /data.
+- type: gallery
+  data: gallery
+- type: downloads
+  data: downloads
+- type: markdown
+  data: more

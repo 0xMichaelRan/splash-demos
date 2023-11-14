@@ -1,0 +1,14 @@
+- title: My other projects
+  links:
+    - title: HydraPaper
+      link: https://
+    - title: Ada UI
+      link: https://
+- title: About me
+  links:
+    - title: My personal website
+      link: https://google.org
+    - title: My GitLab
+      link: https://gitlab.com/
+    - title: My GNOME GitLab
+      link: https://gitlab.gnome.org/

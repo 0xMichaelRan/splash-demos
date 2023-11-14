@@ -1,23 +1,15 @@
-# Compiled class file
-*.class
-.settings/
+themes/
 
-# Log file
-*.log
+# Generated files by hugo
+public/
+resources/_gen/
+assets/jsconfig.json
+hugo_stats.json
 
-# BlueJ files
-*.ctxt
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+# Temporary lock file while building
+.hugo_build.lock

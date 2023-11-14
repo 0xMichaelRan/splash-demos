@@ -1,0 +1,44 @@
+enabled: true
+# icon is a url for an optional icon that will be shown to the left of the title
+icon: /logo.png
+title: CKEditor iOS Client
+subtitle: A demo project for Ada Project Showcase
+# background is a url for an optional background image
+# if left blank, a customizable gradient will be used instead
+background:
+# the gradient takes 3 parameters: an angle and two color stops
+# these values will be injected in the style sheet and need to use valid
+# css syntax
+gradient:
+  angle: -55deg
+  stop1: "#3584e4"
+  stop2: "#33d17a"
+# picture is a url for an optional picture that will be shown to the right of
+# the title. it is recommended to use a screenshot of your project here
+# or alternatively a nice vector graphic
+picture: https://0xMichaelRan.github.io/iOS-CKEditor/static/iOS-CKEditor.png
+
+# these buttons represent links that will be shown under the title
+# they represent quick actions you want your user to take, like Install or
+# Discover features
+#
+# Each button has different properties:
+# - title is a string, will be shown as the button text
+# - link is the url to which the button should navigate the user to
+# - color can be one of the following: blue, red, orange, yellow, green,
+#   purple (default is blue)
+# - outline activates an alternative style with which the button has a
+#   transparent background and colored outline
+# - squared activates an alternative style with which the button has no border
+#   radius. this makes for a more serious and less playful appearance
+# the only mandatory properties are title and link
+buttons:
+  - title: Install
+    link: "#install"
+    color: purple
+  - title: Discover the features
+    link: "#features"
+    outline: true
+  - title: More
+    link: "#more"
+    squared: true
