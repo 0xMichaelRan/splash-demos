@@ -1,4 +1,5 @@
 themes/
+.DS_Store
 
 # Generated files by hugo
 public/
