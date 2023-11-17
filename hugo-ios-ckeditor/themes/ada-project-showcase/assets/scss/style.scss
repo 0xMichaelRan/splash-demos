@@ -1,0 +1,221 @@
+@import 'ada-ui/src/main.scss';
+
+header {
+    transition: background-color $transition-type;
+    {{ if .Site.Data.splash.enabled }}
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        margin-bottom: 0;
+    {{ end }}
+    &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0; right: 0;
+    }
+    .btn {
+        --bg-color: transparent !important;
+    }
+}
+header.transparent, html[data-scroll="0"] header {
+    &, .btn  {
+        --bg-color: transparent !important;
+        --bg-alter: rgba(255, 255, 255, 0.3) !important;
+    }
+}
+
+{{ if and .Site.Params.fixedHeader (or (not .Site.Data.splash) (not .Site.Data.splash.enabled)) }}
+main {
+    padding-top: $header-height;
+}
+{{ end }}
+{{ if .Site.Params.fixedHeader }}
+main {
+    h1, h2, h3, h4, h5, h6 {
+        scroll-margin-top: $header-height;
+    }
+}
+{{ end }}
+
+.splash {
+    .splash-icon {
+        width: 5rem; height: 5rem;
+        margin-right: 1rem;
+    }
+    .splash-title {
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+        .title {
+            @include text-4xl;
+        }
+        .subtitle {
+            @include text-xl;
+        }
+    }
+    .splash-pic {
+        //max-width: #{($content-width / 2) - 25px};
+        min-width: 270px;
+    }
+    .splash-flex {
+        justify-content: space-between;
+        > div {
+            margin: auto 0;
+        }
+        > img {
+            padding-left: 1rem;
+        }
+    }
+    @media only screen and (max-width: 900px) {
+        .splash-flex {
+            flex-wrap: wrap;
+            > *, > div {
+                margin: #{$header-height - $content-margin} auto auto auto;
+            }
+            > img {
+                padding-left: 0;
+            }
+        }
+    }
+
+    color: white;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    padding-top: #{$header-height + $content-margin};
+    padding-bottom: $header-height;
+    > * {
+        max-width: $content-width;
+        padding: $content-margin;
+        margin: auto;
+    }
+    {{ if .Site.Data.splash.background }}
+        background-image: url('{{ .Site.Data.splash.background }}');
+        background-size: cover;
+        background-repeat: no-repeat;
+    {{ else }}
+        background-image: linear-gradient(
+            {{ .Site.Data.splash.gradient.angle | default "40deg" }},
+            {{ .Site.Data.splash.gradient.stop1 | default "$blue-600" }},
+            {{ .Site.Data.splash.gradient.stop2 | default "$blue-800" }}
+        );
+    {{ end }}
+}
+
+main {
+    min-height: 0;
+}
+
+footer {
+    margin-top: $content-margin;
+}
+
+article {
+    img {
+        display: block;
+        max-width: 100%;
+        margin: auto;
+    }
+    p {
+        text-align: justify;
+    }
+}
+
+.downloads-section {
+    .card {
+        img, .distro-icon {
+            display: block;
+            margin: auto;
+            width: 64px; height: 64px;
+        }
+        .distro-icon {
+            opacity: 0.8;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+        }
+        .download-btn {
+            display: block;
+            margin: #{$content-margin * 2};
+        }
+    }
+    align-items: stretch;
+}
+
+.darkmode .card .distro-icon {
+    filter: invert(1);
+}
+
+pre {
+    @include overflow-scrollbar;
+    padding: $content-margin;
+    border-radius: #{$button-radius};
+    margin: $content-margin;
+    overflow-x: auto;
+    display: block;
+}
+
+
+#gallery-current {
+    margin: auto;
+    max-width: 100%;
+}
+
+.gallery {
+    @extend .hbox;
+    @include overflow-scrollbar;
+    overflow-x: auto;
+    img {
+        cursor: pointer;
+        border-radius: $button-radius;
+        max-width: 130px;
+        max-height: 80px;
+        padding: 0 !important;
+        margin: $content-margin !important;
+    }
+    .spacer {
+        padding: 0 0 0 $content-margin !important;
+    }
+}
+
+img {
+    user-select: none;
+}
+
+#dark-mode-detector {
+    display: none;
+    @media (prefers-color-scheme: dark) {
+        content: 'dark';
+    }
+}
+
+#cookie-notice {
+    position: fixed;
+    bottom: #{$content-margin * 3};
+    padding: 0 #{$content-margin * 2};
+    max-width: $content-width;
+    margin: auto;
+    left: 0; right: 0;
+    &.closed {
+        display: none;
+    }
+    .card {
+        .btn {
+            margin-top: 0;
+            margin-right: $content-margin;
+        }
+        svg {
+            fill: currentcolor;
+            width:  32px;
+            height: 32px;
+            min-width:  32px;
+            min-height: 32px;
+        }
+        @media only screen and (max-width: $screen-size-small) {
+            svg {
+                display: none;
+            }
+            .btn {
+                width: 100%;
+            }
+            flex-wrap: wrap;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{{ if and (.) (.enabled) }}
+    <h1 id='{{ lower (.title | default "Downloads") }}'>{{ .title | default "Downloads" }}</h1>
+    <div class="grid-200 downloads-section">
+        {{ range .downloads }}
+            <div class="card">
+                {{ if .logo }}
+                    <img src="{{.logo}}">
+                {{ else }}
+                    <img
+                        class="distro-icon"
+                        src="/distro-icons/{{ if .icon }}{{ .icon }}{{ else }}{{ lower .distro }}{{ end }}.svg"
+                        alt="{{ .distro }}">
+                {{ end }}
+                <h4>{{ .distro }}</h4>
+                {{ if and .button_title .button_link }}
+                    <a class="
+                        btn
+                        {{if .button_color }}{{ .button_color }}{{ end }}
+                        {{if .button_outline }}outline{{ end }}
+                        {{if .button_squared }}squared{{ end }}
+                        download-btn
+                        " href="{{ .button_link }}">
+                        {{ .button_title }}
+                    </a>
+                {{ end }}
+                {{ if .commands }}
+                    {{ printf "```bash\n%s\n```" (trim .commands "\n ") | markdownify }}
+                {{ end }}
+            </div>
+        {{ end }}
+    </div>
+{{ end }}

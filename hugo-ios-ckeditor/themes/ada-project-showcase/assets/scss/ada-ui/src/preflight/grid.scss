@@ -1,0 +1,24 @@
+@mixin grid-common($size) {
+    display: grid;
+    grid-gap: $content-margin;
+    margin: $content-margin 0;
+    > * {
+        display: block;
+        margin: 0 !important;
+    }
+    &.card {
+        padding: $content-margin;
+        > * {
+            padding: 0 !important;
+        }
+    }
+    grid-template-columns: repeat(auto-fit, minmax(#{$size}, 1fr));
+}
+
+.grid-50  {@include grid-common(50px);}
+.grid-100 {@include grid-common(100px);}
+.grid-200 {@include grid-common(200px);}
+.grid-250 {@include grid-common(250px);}
+.grid-300 {@include grid-common(300px);}
+.grid-400 {@include grid-common(400px);}
+.grid-500 {@include grid-common(500px);}

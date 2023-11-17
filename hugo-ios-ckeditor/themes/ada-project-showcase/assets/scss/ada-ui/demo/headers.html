@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ada UI - Headers</title>
+    <link rel="stylesheet" href="/dist/main.css" media="all">
+</head>
+<body>
+    <header>
+        <img src="/logo.svg" style="filter: invert(1);">
+            <div class="vbox">
+                <h1 style="font-size: x-large; margin: 0 0 -10px 0">Ada UI Demo</h1>
+                <span>Headers</span>
+            </div>
+        <div class="spacer-end"></div>
+        <button class="btn" onclick="document.body.classList.toggle('darkmode')">
+            Toggle Dark Mode
+        </button>
+        <a href="/demo">Back</a>
+    </header>
+    <header>
+        <a href="">
+            <img src="/logo.svg" style="filter: invert(1);"/>
+            <h1>Ada UI</h1>
+        </a>
+        <div class="spacer"></div>
+        <a href="">Link 1</a>
+        <a href="">Link 2</a>
+        <a href="">Link 3</a>
+        <div class="dropdown-container">
+             <button class="btn arrow"
+                 onclick="document.getElementById('dd1').classList.toggle('open')">
+                 Dropdown
+             </button>
+             <ul class="dropdown" id="dd1">
+                 <li><a href="">Foo</a></li>
+                 <li><a href="">Foo</a></li>
+                 <li><a href="">Foo</a></li>
+                 <li><a href="">Foo</a></li>
+             </ul>
+        </div>
+        <div class="spacer-end"></div>
+        <div class="dropdown-container">
+             <button class="btn dots"
+                 onclick="document.getElementById('dd2').classList.toggle('open')">
+             </button>
+             <ul class="dropdown right" id="dd2">
+                 <li><a href="">Foo</a></li>
+                 <li><a href="">Lorem</a></li>
+                 <li><a href="">Ipsum dolor sit amet</a></li>
+                 <li><a href="">Foo</a></li>
+             </ul>
+        </div>
+    </header>
+    <header class="red">
+        <h2>Ada UI</h2>
+        <div class="overflow">
+             <button class="btn overflow-btn"
+                 onclick="document.getElementById('ddoverflow').classList.toggle('open')">
+             </button>
+             <ul class="overflow-content" id="ddoverflow">
+                 <li><a href="">Foo</a></li>
+                 <li><a href="">Lorem</a></li>
+                 <li><a href="">Ipsum dolor sit amet</a></li>
+                 <li><a href="">Foo</a></li>
+             </ul>
+        </div>
+    </header>
+    <header class="purple">
+        <h3>Ada UI</h3>
+        <div class="spacer-end"></div>
+        <div class="dropdown-container">
+            <button class="btn arrow"
+                onclick="document.getElementById('ddlogin').classList.toggle('open')">
+                Log In
+            </button>
+            <div id="ddlogin" class="dropdown right dropdown-content">
+                <div class="vbox">
+                    <input type="email" placeholder="Username or email">
+                    <input type="password" placeholder="Password">
+                    <button class="btn small blue">Log in</button>
+                    <a href="">Forgot your password?</a>
+                    <hr>
+                    <span>Don't have an account?</span>
+                    <button class="btn small green">Register</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <header class="green">
+        <h4>Ada UI</h4>
+        <div class="spacer-end"></div>
+        <input type="search" placeholder="Search">
+    </header>
+    <header>
+        <h4>Ada UI</h4>
+        <div class="spacer-end"></div>
+        <input class="noborder" type="search" placeholder="Search">
+    </header>
+    <header>
+        <h4>Ada UI</h4>
+        <div class="spacer-end"></div>
+        <input class="collapsable" type="search" placeholder="Search">
+    </header>
+    <header class="yellow">
+        <h1>Ada UI</h1>
+    </header>
+    <header class="orange">
+        <div class="center">
+            <a href="">
+                <img src="/logo.svg" style="filter: invert(1);"/>
+                <h1>Ada UI</h1>
+            </a>
+            <div class="spacer-end"></div>
+            <div class="overflow">
+                 <button class="btn overflow-btn"
+                     onclick="document.getElementById('ddspacer').classList.toggle('open')">
+                 </button>
+                 <ul class="overflow-content" id="ddspacer">
+                     <li><a href="">Features</a></li>
+                     <li><a href="">Docs</a></li>
+                     <li><a href="">Community</a></li>
+                     <li><a href="">Code</a></li>
+                     <li><a href="">Development Blog</a></li>
+                 </ul>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{{ $splash := .Site.Data.splash }}
+{{ if $splash.enabled }}
+    <div class="splash">
+        <div>
+            <div class="hbox splash-flex">
+                <div class="vbox">
+                    <div class="hbox flex-start-center">
+                        {{ if $splash.icon }}
+                            <img src="{{ $splash.icon }}" class="splash-icon">
+                        {{ end }}
+                        <div class="vbox splash-title">
+                            <h3 class="title">{{ $splash.title }}</h3>
+                            <span class="subtitle">
+                                {{ if $splash.subtitle }}
+                                    {{ $splash.subtitle }}
+                                {{ else }}
+                                    {{ .Site.Params.subtitle }}
+                                {{ end }}
+                            </span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem;" class="hbox flex-wrap flex-start-start button-box">
+                        {{ range $splash.buttons }}
+                            <a class="
+                                btn
+                                {{ if .color }}{{ .color }}{{ end }}
+                                {{ if .outline }}outline{{ end }}
+                                {{ if .squared }}squared{{ end }}
+                            " style="color: white !important;" href="{{ .link }}">{{ .title }}</a>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ if $splash.picture }}
+                    <img class="splash-pic" src="{{ $splash.picture }}">
+                {{ end }}
+            </div>
+        </div>
+    </div>
+{{ end }}

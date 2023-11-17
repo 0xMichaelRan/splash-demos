@@ -1,0 +1,25 @@
+<footer>
+    {{ if .Site.Data.footer_columns }}
+        <div class="hbox flex-start-start flex-wrap flex-gap subtlelinks">
+            {{ range .Site.Data.footer_columns }}
+                <ul class="notlist">
+                    <li><strong>{{ .title }}</strong></li>
+                    {{ range .links }}
+                        <li><a target="_blank" href="{{ .link }}">{{ .title }}</a></li>
+                    {{ end }}
+                </ul>
+            {{ end }}
+        </div>
+    {{ end }}
+    <p>
+        {{ now.Format "2006" }} &copy; {{ .Site.Copyright }}
+        {{ if and .Site.Params.license .Site.Params.licenseLink }}
+            — <a href="{{ .Site.Params.licenseLink }}">{{ .Site.Params.license }}</a>
+        {{ end }}
+    </p>
+    {{- partial "inject/footer.html" . -}}
+    <p>
+        <a href="https://gitlab.com/gabmus/hugo-ada-project-showcase">Ada Project Showcase theme</a> for <a href="https://gohugo.io">Hugo</a> by <a href="https://gabmus.org">Gabriele Musco</a>.
+        Licensed under <a href="https://www.gnu.org/licenses/agpl-3.0.html">GNU AGPLv3</a>.
+    </p>
+</footer>

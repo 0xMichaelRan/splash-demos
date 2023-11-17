@@ -1,0 +1,48 @@
+.vbox, .hbox {
+    display: flex;
+}
+
+.vbox {
+    flex-direction: column;
+}
+
+.hbox {
+    flex-direction: row;
+}
+
+.flex-start-center {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-start-start {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-end-center {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex-center-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-center-start {
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-gap {
+    gap: #{2 * $content-margin};
+}
+
+.flex-spacer {
+    flex-grow: 9999;
+}

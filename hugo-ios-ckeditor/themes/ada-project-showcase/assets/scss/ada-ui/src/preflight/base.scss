@@ -1,0 +1,118 @@
+$border-xs: 1px solid;
+$border-s:  2px solid;
+$border-m:  3px solid;
+$border-l:  4px solid;
+$border-xl: 8px solid;
+
+$transition-duration: 200ms;
+$transition-timing: ease-in-out;
+$transition-type: $transition-duration $transition-timing;
+$transition-default: all $transition-type;
+
+@mixin with-transition {
+    transition-duration: $transition-duration;
+    transition-timing-function: $transition-timing;
+}
+
+$button-padding: 0.7rem 0.5rem;
+$button-padding-small: 0.5rem 0.25rem;
+$button-padding-large: 1.5rem 0.75rem;
+$button-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$button-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$button-shadow-active: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$button-radius: 0.375rem;
+$link-padding: 0.25rem 0;
+$link-border: 3px solid;
+
+$input-focus-shadow-base: 0 0 0 3px;
+$input-focus-shadow: $input-focus-shadow-base $blue-300;
+
+$checkbox-size: 18px;
+
+$dropdown-padding: 0.5rem 1rem;
+
+$header-height: 70px;
+$header-item-margin: 0 3px;
+
+$content-width: 1200px;
+$content-margin: 12px;
+
+$inter-item-margin: 6px;
+
+$card-title-margin: 1rem;
+
+$screen-size-small: 670px;
+
+$darkmode-bg: $gray-900;
+$darkmode-card-bg: $gray-800;
+$darkmode-fg: white;
+
+$link-fg: $blue-600;
+$link-visited-fg: $purple-600;
+$darkmode-link-fg: $blue-300;
+$darkmode-link-visited-fg: $purple-300;
+
+@mixin overflow-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: $gray-400 transparent;
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $gray-400;
+        border-radius: 20px;
+        border: none;
+    }
+}
+
+@mixin downarrow {
+    &::after {
+        box-sizing: border-box;
+        display: inline-block;
+        margin-left: .255em;
+        vertical-align: .255em;
+        content: "";
+        border-top: .3em solid;
+        border-right: .3em solid transparent;
+        border-bottom: 0;
+        border-left: .3em solid transparent;
+    }
+}
+
+body, html {
+    background-color: $gray-100;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+}
+
+@mixin limit-width {
+    max-width: $content-width;
+    padding: $content-margin;
+    margin: auto;
+}
+
+main {
+    @include limit-width;
+    min-height: 80vh;
+}
+
+hr {
+    border: 1px solid $gray-200;
+    margin: $inter-item-margin 0;
+}
+
+a {
+    --link-fg: #{$link-fg};
+    --link-visited-fg: #{$link-visited-fg};
+    color: var(--link-fg);
+    &:visited {
+        color: var(--link-visited-fg);
+    }
+}

@@ -1,0 +1,15 @@
+{{ define "main" }}
+    {{- partial "splash" . -}}
+    <main>
+        {{ $site := .Site }}
+        {{ range .Site.Data.sections }}
+            {{ if eq .type "markdown" }}
+                {{- partial "markdown" ($site.GetPage (.data)) -}}
+            {{ else if eq .type "gallery" }}
+                {{- partial "gallery" (index $site.Data .data) -}}
+            {{ else if eq .type "downloads" }}
+                {{- partial "downloads" (index $site.Data .data) -}}
+            {{ end }}
+        {{ end }}
+    </main>
+{{ end }}

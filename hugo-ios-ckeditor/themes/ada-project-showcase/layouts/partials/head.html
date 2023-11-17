@@ -1,0 +1,28 @@
+<head>
+    {{ if .Site.Params.forceRedirect }}
+        <script>
+            if (location.host != new URL("{{ .Site.BaseURL }}").host) location.href = "{{ .Site.BaseURL }}"
+        </script>
+    {{ end }}
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+
+    <link rel="shortcut icon" href='{{ .Site.Params.favicon | default "/favicon.png" }}' type="image/x-icon" />
+
+    <title>
+        {{ if ne .Title .Site.Title }}
+            {{ .Title }}  &ndash;
+        {{ end }}
+        {{ .Site.Title | default "Ada Project Showcase" }}
+        {{ if .Site.Params.subtitle }}
+            &ndash;  {{ .Site.Params.subtitle }}
+        {{ end }}
+    </title>
+    <!--link href="/symbols-nerd-font/symbols-nerd-font.css" rel="stylesheet"-->
+    <link href="/font-redhatdisplay/font-redhatdisplay.css" rel="stylesheet">
+    {{ $style := resources.Get "/scss/style.scss" | resources.ExecuteAsTemplate "/scss/style.scss" . | resources.ToCSS (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" "true") | resources.Fingerprint "sha512" }}
+    <link type=text/css rel=stylesheet href={{ $style.Permalink }} integrity="{{ $style.Data.Integrity }}" />
+    {{- partial "inject/head.html" . -}}
+    {{- partial "head_meta_opengraph.html" . -}}
+</head>

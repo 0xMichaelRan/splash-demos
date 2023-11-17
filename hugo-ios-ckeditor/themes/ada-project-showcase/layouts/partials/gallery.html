@@ -1,0 +1,17 @@
+{{ if and (.) (.enabled) }}
+    <h1 id='{{ lower (.title | default "Gallery") }}'>{{ .title | default "Gallery" }}</h1>
+    <div class="card">
+        <div class="hbox">
+            <img id="gallery-current" src="{{ index .pictures 0 }}">
+        </div> 
+        <hr style="margin-left: 0; margin-right: 0;">
+        <div class="gallery">
+            {{ range .pictures }}
+                <img src="{{ . }}" onclick="
+                    document.getElementById('gallery-current').src = this.src;
+                ">
+            {{ end }}
+            <div class="spacer"></div>
+        </div>
+    </div>
+{{ end }}

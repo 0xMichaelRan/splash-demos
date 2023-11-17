@@ -1,0 +1,168 @@
+header {
+    max-width: 100%;
+    height: $header-height;
+    margin-bottom: $content-margin;
+    padding: 0 12px;
+
+    &, ul, .overflow, .center {
+        @extend .hbox;
+        @extend .flex-start-center;
+    }
+    ul {
+        list-style: none;
+        margin: 0; padding: 0;
+    }
+
+    .spacer {
+        margin-left: 12px;    
+    }
+    .spacer-end {
+        margin-left: auto;
+    }
+
+    > a, .center > a, .overflow a {
+        @extend .btn;
+        text-align: left;
+        font-weight: normal;
+        text-decoration: none;
+    }
+
+    h1, h2 {
+        @include text-3xl;
+        margin-top: 0; margin-bottom: 0;
+    }
+
+    .center {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    > img, > .btn > img, > a > img,
+    .dropdown-container > *:first-child, > .btn, > a,
+    ul li a, .overflow > *:first-child,
+    .center img, .center > a, .center > .btn {
+        height: #{$header-height - 24};
+        box-shadow: none !important;
+        border: none;
+        font-weight: normal;
+    }
+
+    > *, .dropdown-container > *:first-child, ul li a,
+    .center > a {
+        margin: $header-item-margin;
+        padding-top: 0 !important; padding-bottom: 0 !important;
+    }
+
+    .overflow {
+        .overflow-btn {
+            display: none;
+            @extend .btn;
+            @extend .dots;
+            margin: $header-item-margin;
+        }
+        @media only screen and (max-width: #{$screen-size-small}) {
+            @include dropdown-container;
+            margin-left: auto;
+            .overflow-btn {
+                display: inline-flex;
+                padding-top: 0; padding-bottom: 0;
+            }
+            .overflow-content {
+                @include dropdown;
+                display: block;
+                left: unset;
+                right: 0;
+                --dropdown-offset: 4.1rem;
+                > li a, > a {
+                    background-color: transparent;
+                    padding: $dropdown-padding !important;
+                    display: block;
+                    height: unset;
+                    font-weight: normal;
+                    border-radius: 0;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    > input {
+        &, &:focus {
+            color: white;
+            background-color: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            box-shadow: none;
+            border-radius: 0;
+        }
+        height: #{$header-height - 30};
+        border-bottom: 2px solid rgba(255, 255, 255, .5);
+        &[type=search] {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff7f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+        }
+
+        &:focus {
+            border-bottom: 2px solid rgba(255, 255, 255, 1);
+            &[type=search] {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+            }
+        }
+        &.noborder {
+            &, &:focus {
+                border-bottom: none !important;
+            }
+        }
+    }
+
+    *:not(a), > a, > a:visited {
+        color: white;
+    }
+    //&, h1, h2, h3, h4, p, span, a, .btn {
+    //    &:not(.dropdown *) {
+    //    }
+    //}
+    --bg-color: #{$blue-500};
+    background-color: var(--bg-color);
+    &.red {
+        &, > .btn, .center > .btn, .dropdown-container > .btn, .overflow .btn, > a {
+            --bg-color: #{$red-500};
+            --bg-alter: #{$red-300};
+        }
+    }
+    &.orange {
+        &, > .btn, .center > .btn, .dropdown-container > .btn, .overflow .btn, > a {
+            --bg-color: #{$orange-500};
+            --bg-alter: #{$orange-300};
+        }
+    }
+    &.yellow {
+        &, > .btn, .center > .btn, .dropdown-container > .btn, .overflow .btn, > a {
+            --bg-color: #{$yellow-500};
+            --bg-alter: #{$yellow-300};
+        }
+    }
+    &.green {
+        &, > .btn, .center > .btn, .dropdown-container > .btn, .overflow .btn {
+            --bg-color: #{$green-500};
+            --bg-alter: #{$green-300};
+        }
+    }
+    &.purple {
+        &, > .btn, .center > .btn, .dropdown-container > .btn, .overflow .btn {
+            --bg-color: #{$purple-500};
+            --bg-alter: #{$purple-300};
+        }
+    }
+
+    .dropdown-container {
+        @include dropdown-container;
+    }
+    .dropdown {
+        @include dropdown;
+        *:not(.btn):not(a) {
+            color: var(--dd-fg-color);
+        }
+    }
+}

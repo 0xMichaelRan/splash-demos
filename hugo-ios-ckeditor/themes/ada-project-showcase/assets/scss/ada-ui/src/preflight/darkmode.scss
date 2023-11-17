@@ -1,0 +1,80 @@
+@mixin darkmode {
+    &, body, main {
+        background-color: $darkmode-bg;
+        color: $darkmode-fg;
+    }
+
+    a {
+        --link-fg: #{$darkmode-link-fg};
+        --link-visited-fg: #{$darkmode-link-visited-fg};
+    }
+
+    .btn {
+        &.disabled {
+            &, &:hover, &:focus, &:active {
+                color: $gray-300;
+                background-color: $gray-700;
+                &.outline {
+                    border-color: $gray-700;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    .link:not(.blue):not(.red):not(.orange):not(.yellow):not(.green):not(.purple) {
+        --l-color: $darkmode-fg;
+    }
+
+    :not(header) {
+        input, textarea, select {
+            background-color: $darkmode-card-bg;
+            &:not(.error) {
+                color: $darkmode-fg;
+                border-color: $gray-600;
+                &:focus {
+                    box-shadow: $input-focus-shadow-base $blue-400;
+                }
+            }
+
+            &.toggle {
+                background-color: $darkmode-card-bg;
+                &::after {
+                    background-color: $gray-100;
+                }
+                &:checked {
+                    background-color: $blue-500;
+                }
+            }
+        }
+    }
+
+    .dropdown, .card, .revealer {
+        --card-bg: #{$darkmode-card-bg};
+    }
+
+    .dropdown {
+        --dd-hover-color: #{$gray-600};
+        --dd-fg-color: #{$darkmode-fg};
+    }
+
+    header {
+        @media only screen and (max-width: #{$screen-size-small}) {
+            .overflow-content {
+                &, &.open {
+                    --card-bg: #{$darkmode-card-bg};
+                    --dd-hover-color: #{$gray-600};
+                    --dd-fg-color: #{$darkmode-fg};
+                }
+            }
+        }
+    }
+
+    .revealer .revealer-heading:hover {
+        background-color: $gray-600;
+    }
+}
+
+.darkmode {
+    @include darkmode;
+}

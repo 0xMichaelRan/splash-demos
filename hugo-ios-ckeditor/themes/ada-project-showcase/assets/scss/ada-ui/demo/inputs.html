@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Ada UI - Inputs</title>
+    <link rel="stylesheet" href="/dist/main.css" media="all">
+</head>
+<body>
+    <header>
+        <img src="/logo.svg" style="filter: invert(1);">
+        <div class="vbox">
+            <h1 style="font-size: x-large; margin: 0 0 -10px 0">Ada UI Demo</h1>
+            <span>Inputs</span>
+        </div>
+        <div class="spacer-end"></div>
+        <button class="btn" onclick="document.body.classList.toggle('darkmode')">
+            Toggle Dark Mode
+        </button>
+        <a href="/demo">Back</a>
+    </header>
+    <main>
+        <input type="text" placeholder="Write your text here...">
+        <input class="error" type="text" placeholder="Write your text here...">
+        <input type="date">
+        <input type="email">
+        <input type="password">
+        <hr>
+        <textarea></textarea>
+        <hr>
+        <select>
+            <option>English</option>
+            <option>French</option>
+            <option>Spanish</option>
+        </select>
+        <hr>
+        <div>
+            <div class="checkbox-container">
+                <input id="check1" type="checkbox">
+                <label for="check1">Checkbox</label>
+            </div>
+            <div class="checkbox-container">
+                <input id="check2" type="checkbox">
+                <label for="check2">Checkbox</label>
+            </div>
+            <div class="checkbox-container">
+                <input id="check3" type="checkbox">
+                <label for="check3">Checkbox</label>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <div class="radio-container">
+                <input id="radio1" type="radio" name="demo-radio">
+                <label for="radio1">Radio 1</label>
+            </div>
+            <div class="radio-container">
+                <input id="radio2" type="radio" name="demo-radio">
+                <label for="radio2">Radio 2</label>
+            </div>
+            <div class="radio-container">
+                <input id="radio3" type="radio" name="demo-radio">
+                <label for="radio3">Radio 3</label>
+            </div>
+        </div>
+        <hr>
+        <div class="toggle-container">
+            <input type="checkbox" id="toggle1" class="toggle">
+            <label for="toggle1">Toggle</label>
+        </div>
+        <hr>
+        <input type="search" placeholder="Search for content">
+        <input type="search" class="collapsable" placeholder="Search for content">
+    </main>
+</body>
+</html>

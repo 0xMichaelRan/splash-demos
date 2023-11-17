@@ -1,0 +1,35 @@
+<span id="dark-mode-detector"></span>
+<script>
+    const DARK_MODE_KEY = 'darkmode'
+
+    function getDarkPref() {
+        let res = localStorage.getItem(DARK_MODE_KEY);
+        if (res === null) return null;
+        return res === "true" ? true : false;
+    }
+
+    function setDarkPref(state) {
+        localStorage.setItem(DARK_MODE_KEY, state)
+    }
+
+    var prefers_dark_mode = window.getComputedStyle(
+        document.getElementById('dark-mode-detector')
+    ).content.includes('dark');
+    // it's weird but the value is wrapped in quotes, thus the includes instead of ===
+    
+    if (getDarkPref() === null) {
+        setDarkPref(prefers_dark_mode);
+    }
+    
+    if (getDarkPref() === true) {
+        document.body.classList.add('darkmode');
+    }
+    else {
+        document.body.classList.remove('darkmode');
+    }
+
+    function darktoggle() {
+        setDarkPref(!getDarkPref())
+        document.body.classList.toggle('darkmode');
+    }
+</script>
