@@ -20,8 +20,8 @@ disableKinds = ["RSS", "section", "categories", "tags"]
     # These links will appear in the Header
     links = [
         ["Features", "/#features"],
+        ["Screenshots", "/#screenshots"],
         ["Download", "/#download"],
-        ["More", "/#more"],
     ]
 
     # This logo will appear in the header, left of the title
