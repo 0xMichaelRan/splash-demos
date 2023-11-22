@@ -2,7 +2,8 @@ enabled: true
 # icon is a url for an optional icon that will be shown to the left of the title
 icon: /logo.png
 title: CKEditor iOS Client
-subtitle: A demo project for Ada Project Showcase
+subtitle: The unofficial CKEditor App for iOS, the mobile adaptation of the renowned open-source web text editor. 
+
 # background is a url for an optional background image
 # if left blank, a customizable gradient will be used instead
 background:
@@ -34,10 +35,10 @@ picture: https://0xMichaelRan.github.io/iOS-CKEditor/static/iOS-CKEditor.png
 # the only mandatory properties are title and link
 buttons:
   - title: Install
-    link: "#install"
+    link: ""
     color: purple
-  - title: Discover the features
-    link: "#features"
+  - title: Open Sourece
+    link: "https://github.com/0xMichaelRan/iOS-CKEditor"
     outline: true
   - title: More
     link: "#more"

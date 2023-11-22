@@ -4,11 +4,12 @@ title: Download now
 downloads:
   - distro: Flathub
     logo:
-    button_title: Download on Flathub
+    button_title: Download from App Store
     button_link: "#"
     button_color: purple
     commands: |
-      flatpak --user install <package-name-here>
+      ls -l /
+      echo "Foo"
   - distro: Fedora
     logo:
     commands: |
