@@ -7,10 +7,10 @@ downloads:
     button_title: App Store
     button_link: "https://apps.apple.com/us/app/ios-ckeditor-client/id578526249"
     button_color: blue
-  - distro: Fedora
-    logo:
+  - distro: GitHub
+    logo: /github.jpeg
     commands: |
-      ls -l /
+      git clone https://github.com/0xMichaelRan/iOS-CKEditor.git
       echo "Foo"
   - distro: Debian (unstable)
     icon: debian
