@@ -3,7 +3,7 @@ enabled: true
 title: Download
 downloads:
   - distro: Apple
-    logo:
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Apple_Store_logo.svg/1024px-Apple_Store_logo.svg.png"
     button_title: App Store
     button_link: "https://apps.apple.com/us/app/ios-ckeditor-client/id578526249"
     button_color: blue
