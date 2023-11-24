@@ -8,18 +8,6 @@ downloads:
     button_link: "https://apps.apple.com/us/app/ios-ckeditor-client/id578526249"
     button_color: blue
   - distro: GitHub
-    logo: /github.jpeg
+    logo: /github.png
     commands: |
       git clone https://github.com/0xMichaelRan/iOS-CKEditor.git
-      echo "Foo"
-  - distro: Debian (unstable)
-    icon: debian
-    commands: |
-      ls -l /
-      echo "Foo"
-  - distro: foobar
-    logo: /logo-boxed.svg
-    button_title: Foo that bar
-    button_link: "#"
-    button_outline: true
-    button_squared: true
