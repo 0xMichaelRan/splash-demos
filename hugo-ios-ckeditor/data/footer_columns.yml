@@ -1,14 +1,10 @@
-- title: My other projects
+- title: My Other projects
   links:
-    - title: HydraPaper
-      link: https://
-    - title: Ada UI
-      link: https://
+    - title: iOS-CKEditor
+      link: 
 - title: About me
   links:
     - title: My personal website
-      link: https://google.org
-    - title: My GitLab
-      link: https://gitlab.com/
-    - title: My GNOME GitLab
-      link: https://gitlab.gnome.org/
+      link: https://345321.xyz
+    - title: My GitHug
+      link: https://github.com/0xMichaelRan/
