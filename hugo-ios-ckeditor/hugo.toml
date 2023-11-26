@@ -1,4 +1,4 @@
-baseURL = "https://example.org"
+baseURL = "https://0xmichaelran.github.io/Splash-Demos/hugo-ios-ckeditor/public/"
 languageCode = 'en-us'
 theme = "ada-project-showcase"
 
