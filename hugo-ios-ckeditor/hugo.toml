@@ -1,4 +1,4 @@
-baseURL = "https://0xmichaelran.github.io/Splash-Demos/hugo-ios-ckeditor/public/"
+baseURL = "http://localhost:1313/"
 languageCode = 'en-us'
 theme = "ada-project-showcase"
 
@@ -15,7 +15,7 @@ disableKinds = ["RSS", "section", "categories", "tags"]
 [params]
     # This will show up along in the title tag in head, after the title, and
     # in the splash if no subtitle is specified there
-    subtitle = "Some subtitle"
+    subtitle = "The unofficial CKEditor App for iOS"
 
     # These links will appear in the Header
     links = [

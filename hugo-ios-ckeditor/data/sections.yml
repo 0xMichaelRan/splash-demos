@@ -5,7 +5,9 @@
 # All other types expect .yml files inside /data.
 - type: gallery
   data: gallery
+
 - type: downloads
   data: downloads
+
 - type: markdown
   data: more

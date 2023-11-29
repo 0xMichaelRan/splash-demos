@@ -34,12 +34,15 @@ picture: https://0xMichaelRan.github.io/iOS-CKEditor/static/iOS-CKEditor.png
 #   radius. this makes for a more serious and less playful appearance
 # the only mandatory properties are title and link
 buttons:
-  - title: Install
-    link: ""
-    color: purple
+
+  - title: Learn More
+    link: "#features"
+    squared: true
+
   - title: Open Sourece
     link: "https://github.com/0xMichaelRan/iOS-CKEditor"
     outline: true
-  - title: More
-    link: "#more"
-    squared: true
+
+  - title: Install
+    link: "#download"
+    color: purple
