@@ -1,4 +1,4 @@
-baseURL = "/splash-Demos/hugo-ios-ckeditor"
+baseURL = "/Splash-Demos/hugo-ios-ckeditor"
 languageCode = 'en-us'
 theme = "ada-project-showcase"
 
