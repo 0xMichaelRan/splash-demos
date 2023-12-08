@@ -1,8 +1,8 @@
 /themes/
 .DS_Store
 
-# Generated files by hugo
-/public/
+# Generated files by hugoI
+public/
 resources/_gen/
 assets/jsconfig.json
 hugo_stats.json
