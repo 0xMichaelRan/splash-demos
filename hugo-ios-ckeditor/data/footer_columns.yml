@@ -1,10 +1,12 @@
-- title: My Other projects
+- title: My Projects
   links:
     - title: iOS-CKEditor
       link: TODO
-- title: Who am I
+- title: About Me
   links:
-    - title: Blog
+    - title: My Blog
       link: https://345321.xyz
     - title: GitHub
       link: https://github.com/0xMichaelRan/
+    - title: LinkedIn
+      link: https://www.linkedin.com/in/weiran19990/

@@ -2,7 +2,7 @@ enabled: true
 # icon is a url for an optional icon that will be shown to the left of the title
 icon: /logo.png
 title: CKEditor iOS Client
-subtitle: The unofficial CKEditor App for iOS, the mobile adaptation of the renowned open-source web text editor. 
+subtitle: The unofficial CKEditor App for iOS.
 
 # background is a url for an optional background image
 # if left blank, a customizable gradient will be used instead
