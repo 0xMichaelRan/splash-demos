@@ -1,4 +1,4 @@
-baseURL = ""
+baseURL = "https://ios-ckedit.345321.xyz/"
 languageCode = 'en-us'
 theme = "ada-project-showcase"
 
@@ -6,7 +6,7 @@ theme = "ada-project-showcase"
 title = "iOS CKEditor"
 
 # This is the copyright notice, it will appear in the footer, after "<current year> ©"
-copyright = "https://github.com/0xMichaelRan"
+copyright = "0xMichaelRan"
 
 # It is recommended to disable these built-in hugo types, as they don't do
 # anything with this theme and don't have a use for the scope of this theme
