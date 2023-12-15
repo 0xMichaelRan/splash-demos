@@ -11,3 +11,9 @@ downloads:
     logo: /github.png
     commands: |
       git clone https://github.com/0xMichaelRan/iOS-CKEditor.git
+    button_title: GitHub
+    button_link: "https://github.com/0xMichaelRan/iOS-CKEditor"
+    button_color: purple
+    button_outline: true
+    button_squared: true
+
