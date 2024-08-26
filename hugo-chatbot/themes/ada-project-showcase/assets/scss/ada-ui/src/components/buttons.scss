@@ -1,0 +1,137 @@
+a.btn, a.btn:visited {
+    color: white;
+    text-decoration: none;
+    &.outline {
+        color: var(--bg-color);
+        &:hover, &:focus, &:active {
+            color: white;
+        }
+    }
+}
+
+.btn {
+    @extend .hbox;
+    @extend .flex-center-center;
+    margin: $inter-item-margin;
+    display: inline-flex;
+    cursor: pointer;
+    padding: $button-padding;
+    border: $border-m;
+    border-color: transparent;
+    border-radius: $button-radius;
+    box-shadow: $button-shadow;
+    transition: $transition-default;
+    font-weight: $text-semibold;
+    text-align: center;
+    color: white;
+    background-color: var(--bg-color);
+
+    > * {
+        padding-right: 6px;
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+
+    &.outline {
+        border-color: var(--bg-color); 
+        color: var(--bg-color);
+        background-color: transparent;
+        &:hover, &:focus, &:active {
+            background-color: var(--bg-color);
+            color: white;
+        }
+    }
+
+    &:hover, &:focus {
+        box-shadow: $button-shadow-hover;
+    }
+    &:active {
+        box-shadow: $button-shadow-active;
+    }
+
+    &:hover, &:focus, &:active {
+        background-color: var(--bg-alter);
+    }
+
+    &, &.blue {
+        --bg-color: #{$blue-500};
+        --bg-alter: #{$blue-300};
+    }
+    &.red {
+        --bg-color: #{$red-500};
+        --bg-alter: #{$red-300};
+    }
+    &.orange {
+        --bg-color: #{$orange-500};
+        --bg-alter: #{$orange-300};
+    }
+    &.yellow {
+        --bg-color: #{$yellow-500};
+        --bg-alter: #{$yellow-300};
+    }
+    &.green {
+        --bg-color: #{$green-500};
+        --bg-alter: #{$green-300};
+    }
+    &.purple {
+        --bg-color: #{$purple-500};
+        --bg-alter: #{$purple-300};
+    }
+
+    &.squared {
+        border-radius: 0;
+    }
+    & {
+        @include text-base;
+    }
+    &.small {
+        @include text-s;
+        padding: $button-padding-small;
+    }
+    &.large {
+        @include text-xl;
+        padding: $button-padding-large
+    }
+    &.disabled {
+        cursor: not-allowed;
+        background-color: $gray-200;
+        color: $gray-800;
+        box-shadow: none;
+        &:hover, &:focus, &:active {
+            background-color: $gray-200;
+            box-shadow: none;
+        }
+        &.outline {
+            background-color: transparent;
+            border-color: $gray-200;
+            color: $gray-800;
+            &:hover, &:focus, &:active {
+                background-color: transparent;
+                color: $gray-800;
+            }
+        }
+    }
+}
+
+.link {
+    cursor: pointer;
+    transition: $transition-default;
+    background-color: transparent;
+    padding: $link-padding;
+    border: none;
+    border-bottom: $link-border;
+    border-color: transparent;
+    font-weight: $text-semibold;
+    --l-color: black;
+    color: var(--l-color);
+
+    &:hover, &:focus, &:active {border-color: var(--l-color);}
+
+    &.blue {--l-color: #{$blue-500};}
+    &.red {--l-color: #{$red-500};}
+    &.orange {--l-color: #{$orange-500};}
+    &.yellow {--l-color: #{$yellow-500};}
+    &.green {--l-color: #{$green-500};}
+    &.purple {--l-color: #{$purple-500};}
+}

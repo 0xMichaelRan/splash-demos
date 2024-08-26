@@ -1,0 +1,19 @@
+enabled: true
+# this will show up on top of the section as a h1
+title: Download
+downloads:
+  - distro: Apple
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Apple_Store_logo.svg/1024px-Apple_Store_logo.svg.png"
+    button_title: App Store
+    button_link: "https://apps.apple.com/us/app/ios-ckeditor-client/id578526249"
+    button_color: blue
+  - distro: GitHub
+    logo: /github.png
+    commands: |
+      git clone https://github.com/0xMichaelRan/iOS-CKEditor.git
+    button_title: GitHub
+    button_link: "https://github.com/0xMichaelRan/iOS-CKEditor"
+    button_color: purple
+    button_outline: true
+    button_squared: true
+

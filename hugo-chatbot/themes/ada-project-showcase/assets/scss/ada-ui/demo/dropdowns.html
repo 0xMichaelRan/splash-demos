@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Ada UI - Dropdowns</title>
+    <link rel="stylesheet" href="/dist/main.css" media="all">
+</head>
+<body>
+    <header>
+        <img src="/logo.svg" style="filter: invert(1);">
+        <div class="vbox">
+            <h1 style="font-size: x-large; margin: 0 0 -10px 0">Ada UI Demo</h1>
+            <span>Dropdowns</span>
+        </div>
+        <div class="spacer-end"></div>
+        <button class="btn" onclick="document.body.classList.toggle('darkmode')">
+            Toggle Dark Mode
+        </button>
+        <a href="/demo">Back</a>
+    </header>
+    <main>
+        <div class="dropdown-container">
+            <button onclick="
+                document.getElementById('dd1').classList.toggle('open');
+            ">
+                Click me
+            </button>
+            <ul class="dropdown direct" id="dd1">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </div>
+        <div class="hbox flex-wrap">
+            <div class="dropdown-container">
+                <button onclick="
+                    document.getElementById('dd2').classList.toggle('open');
+                ">
+                    Click me
+                </button>
+                <ul class="dropdown direct" id="dd2">
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+            <div class="dropdown-container">
+                <button class="arrow" onclick="
+                    document.getElementById('dd3').classList.toggle('open');
+                ">
+                    Click me
+                </button>
+                <ul class="dropdown direct" id="dd3">
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="dropdown-container">
+            <button class="btn small" onclick="
+                document.getElementById('dd4').classList.toggle('open');
+            ">
+                Drop here
+            </button>
+            <ul id="dd4" class="dropdown">
+                <li><a href="">Lorem</a></li>
+                <li><a href="">ipsum</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+                <li><a href="">dolor</a></li>
+            </ul>
+        </div>
+        <div class="dropdown-container">
+            <button class="btn" onclick="
+                document.getElementById('dd5').classList.toggle('open');
+            ">
+                Drop here
+            </button>
+            <ul id="dd5" class="dropdown">
+                <li><a href="">Lorem</a></li>
+                <li><a href="">ipsum</a></li>
+                <li><a href="">dolor</a></li>
+            </ul>
+        </div>
+        <div class="dropdown-container">
+            <button class="btn arrow purple" onclick="
+                document.getElementById('dd6').classList.toggle('open');
+            ">
+                Drop here
+            </button>
+            <ul id="dd6" class="dropdown">
+                <li><a href="">Lorem</a></li>
+                <li><a href="">ipsum</a></li>
+                <li><a href="">dolor</a></li>
+            </ul>
+        </div>
+        <div class="dropdown-container">
+            <button class="btn dots purple" onclick="
+                document.getElementById('dd7').classList.toggle('open');
+            ">
+                Drop here
+            </button>
+            <ul id="dd7" class="dropdown">
+                <li><a href="">Lorem</a></li>
+                <li><a href="">ipsum</a></li>
+                <li><a href="">dolor</a></li>
+            </ul>
+        </div>
+        <div class="dropdown-container">
+            <button class="btn dots purple" onclick="
+                document.getElementById('dd8').classList.toggle('open');
+            "></button>
+            <ul id="dd8" class="dropdown">
+                <li><a href="">Lorem</a></li>
+                <li><a href="">ipsum</a></li>
+                <li><a href="">dolor</a></li>
+            </ul>
+        </div>
+        <div class="dropdown-container">
+            <button class="btn green large" onclick="
+                document.getElementById('dd9').classList.toggle('open');
+            ">
+                Large drop
+            </button>
+            <ul id="dd9" class="dropdown">
+                <li><a href="">Lorem</a></li>
+                <li><a href="">ipsum</a></li>
+                <li><a href="">dolor</a></li>
+            </ul>
+        </div>
+        <div class="dropdown-container">
+            <button class="btn outline red arrow" onclick="
+                document.getElementById('dd10').classList.toggle('open');
+            ">
+                Drop
+            </button>
+            <ul id="dd10" class="dropdown">
+                <li><a href="">Lorem</a></li>
+                <li><a href="">ipsum</a></li>
+                <li><a href="">dolor</a></li>
+            </ul>
+        </div>
+        <div class="dropdown-container">
+            <button class="btn red" onclick="
+                document.getElementById('dd11').classList.toggle('open');
+            ">
+                Drop
+            </button>
+            <div id="dd11" class="dropdown dropdown-content">
+                <h3>Lorem ipsum</h3>
+                <p>dolor sit amet <a href="">consectetur</a></p>
+                <a href="">free link</a>
+            </div>
+        </div>
+        <div class="dropdown-container">
+            <button class="btn small" onclick="
+                document.getElementById('dd12').classList.toggle('open');
+            ">
+                Drop
+            </button>
+            <div id="dd12" class="dropdown direct">
+                <a href="">free link</a>
+                <a href="">free link</a>
+                <a href="">free link</a>
+                <a href="">free link</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

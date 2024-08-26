@@ -1,0 +1,38 @@
+@mixin card-exterior {
+    --card-bg: white;
+    background-color: var(--card-bg);
+    box-shadow: $button-shadow;
+    border-radius: $button-radius;
+}
+
+.card {
+    @include card-exterior;
+    h1, h2, h3, h4 {
+        margin: $card-title-margin 0;
+    }
+    padding: $content-margin 0;
+    > *:not(.cover):not(hr):not(.btn) {
+        padding: 0 $content-margin;
+    }
+    hr {
+        margin: $content-margin;
+    }
+    margin: $content-margin 0;
+    > *:first-child {
+        margin-top: 0;
+    }
+    > *:last-child {
+        margin-bottom: 0;
+    }
+
+    img.cover {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        // you can set a custom max-height
+    }
+
+    ul, ol {
+        margin-left: 1.5rem;
+    }
+}

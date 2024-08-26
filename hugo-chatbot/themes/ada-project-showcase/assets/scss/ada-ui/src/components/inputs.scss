@@ -1,0 +1,116 @@
+input, textarea, select {
+    margin: $inter-item-margin 0;
+    @include with-transition;
+    transition-property: box-shadow, background-color;
+    padding: $button-padding;
+    border: $border-xs;
+    border-color: $gray-200;
+    border-radius: $button-radius;
+    background-color: white;
+    box-shadow: $button-shadow;
+    outline: none;
+    &:focus {
+        box-shadow: $input-focus-shadow;
+    }
+
+    &.error {
+        color: $red-500;
+        border-color: $red-500;
+        &:focus {
+            box-shadow: $input-focus-shadow-base $red-300;
+        }
+    }
+}
+
+select {
+    // down arrow icon
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a0aec0'%3e%3cpath d='M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.5em 1.5em;
+    appearance: none;
+    padding-right: 2.5rem;
+}
+
+.checkbox-container, .radio-container, .toggle-container {
+    @extend .hbox;
+    @extend .flex-start-center;
+}
+
+input[type=checkbox], input[type=radio] {
+    &, & + label {
+        cursor: pointer;
+    }
+    margin-right: #{$checkbox-size/2};
+    appearance: none;
+    width: $checkbox-size; height: $checkbox-size;
+    padding: 0;
+    user-select: none;
+    display: inline-block;
+
+    &.toggle {
+        background-color: $gray-200;
+        position: relative;
+        width: #{$checkbox-size*2};
+        border-radius: $checkbox-size;
+        &::after {
+            @include with-transition;
+            transition-property: left;
+            content: '';
+            position: absolute;
+            background-color: white;
+            border-radius: 100%;
+            width: #{$checkbox-size - 6}; height: #{$checkbox-size - 6};
+            top: 2px;
+            left: 2px;
+        }
+        &:checked {
+            background-image: none;
+            &::after {
+                left: #{$checkbox-size + 2};
+            }
+        }
+    }
+
+    &:checked {
+        background-color: $blue-500;
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+input[type=checkbox]:checked {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+}
+
+input[type=radio]:checked {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+}
+
+input[type=radio] {
+    border-radius: 100%;
+}
+
+input[type=search] {
+    @include with-transition;
+    transition-property: border;
+    padding-left: 2.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23#{str-slice('#{$gray-300}', 2, 7)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 0.5rem center;
+    background-size: 1.5em 1.5em;
+    &:focus {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23#{str-slice('#{$blue-500}', 2, 7)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+    }
+
+    &.collapsable {
+        @include with-transition;
+        transition-property: width;
+        padding-right: 0;
+        width: 0;
+        &:focus, &:hover {
+            width: 200px;
+        }
+    }
+}

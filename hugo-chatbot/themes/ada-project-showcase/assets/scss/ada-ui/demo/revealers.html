@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Ada UI - Revealers</title>
+    <link rel="stylesheet" href="/dist/main.css" media="all">
+</head>
+<body>
+    <header>
+        <img src="/logo.svg" style="filter: invert(1);">
+        <div class="vbox">
+            <h1 style="font-size: x-large; margin: 0 0 -10px 0">Ada UI Demo</h1>
+            <span>Revealers</span>
+        </div>
+        <div class="spacer-end"></div>
+        <button class="btn" onclick="document.body.classList.toggle('darkmode')">
+            Toggle Dark Mode
+        </button>
+        <a href="/demo">Back</a>
+    </header>
+    <main>
+        <h2>Standard</h2>
+        <div class="revealer">
+            <div class="revealer-heading" onclick="document.getElementById('rev1').classList.toggle('open')">
+                <span>Expand</span>
+            </div>
+            <div class="revealer-content" id="rev1">
+                <h3>Hello there!</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
+        <h2>Exclusive</h2>
+        <div id="revexcont">
+            <div class="revealer">
+                <div class="revealer-heading">
+                    <span>One</span>
+                </div>
+                <div class="revealer-content" id="revex1">
+                    <h3>One</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+            <div class="revealer">
+                <div class="revealer-heading">
+                    <span>Two</span>
+                </div>
+                <div class="revealer-content" id="revex2">
+                    <h3>Two</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+            <div class="revealer">
+                <div class="revealer-heading">
+                    <span>Three</span>
+                </div>
+                <div class="revealer-content" id="revex3">
+                    <h3>Three</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script>
+            var masterContainer = document.getElementById('revexcont');
+            var sections = Array.from(masterContainer.getElementsByClassName('revealer-content'));
+            Array.from(masterContainer.getElementsByClassName('revealer-heading')).map(
+                el => {el.onclick = () => {
+                    let target = el.parentElement.getElementsByClassName('revealer-content')[0];
+                    if (target.classList.contains('open')) {
+                        target.classList.remove('open');
+                    }
+                    else {
+                        sections.map(s => s.classList.remove('open'));
+                        target.classList.toggle('open');
+                    }
+                }}
+            );
+        </script>
+    </main>
+</body>
+</html>

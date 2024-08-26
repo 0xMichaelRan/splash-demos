@@ -1,0 +1,31 @@
+.revealer {
+    @include card-exterior;
+    margin: $content-margin 0;
+
+    .revealer-heading {
+        @include downarrow;
+        transition: background-color $transition-type;
+        background-color: transparent;
+        padding: $content-margin;
+        cursor: pointer;
+        border-radius: $button-radius;
+        &:hover {
+            background-color: $gray-100;
+        }
+    }
+
+    .revealer-content {
+        transition: height $transition-type;
+        overflow: hidden;
+        padding: 0;
+        transform-origin: top;
+        height: 0;
+        > * {
+            margin: $content-margin;
+        }
+        &.open {
+            height: auto;
+            overflow: auto;
+        }
+    }
+}

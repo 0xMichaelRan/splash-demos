@@ -1,0 +1,11 @@
+footer {
+    background-color: black;
+    > * {
+        @include limit-width;
+    }
+    &, a, a:visited {
+        color: $gray-200;
+    }
+    padding: $content-margin;
+    margin-top: 5vh;
+}
