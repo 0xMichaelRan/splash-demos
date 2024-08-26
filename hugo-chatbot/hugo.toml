@@ -15,7 +15,7 @@ disableKinds = ["RSS", "section", "categories", "tags"]
 [params]
     # This will show up along in the title tag in head, after the title, and
     # in the splash if no subtitle is specified there
-    subtitle = "The unofficial CKEditor App for iOS"
+    subtitle = "The Gen-AI Chatbot for AI"
 
     # These links will appear in the Header
     links = [

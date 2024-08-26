@@ -1,3 +1,2 @@
-Source code of the product: 
 
-https://github.com/0xMichaelRan/iOS-CKEditor
+https://chatbot.345321.xyz/
